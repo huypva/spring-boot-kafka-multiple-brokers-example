@@ -4,13 +4,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.codebyexample</groupId>
-    <artifactId>spring-boot-template</artifactId>
+    <artifactId>spring-boot-kafka-multiple-brokers-example</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Parent</name>
 
     <modules>
-        <module>hello-world</module>
+        <module>spring-boot-kafka-multiple-brokers</module>
     </modules>
 
     <build>

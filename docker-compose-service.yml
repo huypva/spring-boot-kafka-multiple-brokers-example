@@ -1,8 +1,8 @@
 version: "3.4"
 services:
-  hello-world:
-    build: hello-world
-    container_name: 'hello-world'
+  spring-boot-kafka-multiple-brokers:
+    build: spring-boot-kafka-multiple-brokers
+    container_name: 'spring-boot-kafka-multiple-brokers'
     environment:
       - spring_profiles_active=docker
     ports:
