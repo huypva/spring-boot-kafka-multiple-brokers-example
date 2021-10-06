@@ -1,7 +1,7 @@
 The example project for StringBoot service
 
 <div align="center">
-    <img src="./assets/images/spring_boot_icon.png"/>
+    <img src="./assets/images/kafka.png"/>
 </div>
 
 ## Getting Started
@@ -9,7 +9,7 @@ The example project for StringBoot service
 ## Project structure
 ```
 .
-├── hello-world
+├── spring-boot-kafka-multiple-brokers
 │   ├── Dockerfile
 │   ...
 ├── docker-compose.yaml
