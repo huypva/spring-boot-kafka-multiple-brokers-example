@@ -1,8 +1,8 @@
 package io.codebyexample.kafkamultiplebrokers.entrypoint.kafka;
 
-import io.codebyexample.springbootkafka.core.entity.UserMessage;
-import io.codebyexample.springbootkafka.core.usecase.example.UserUseCase;
-import io.codebyexample.springbootkafka.utils.GsonUtils;
+import io.codebyexample.kafkamultiplebrokers.core.entity.UserMessage;
+import io.codebyexample.kafkamultiplebrokers.core.usecase.user.UserUseCase;
+import io.codebyexample.kafkamultiplebrokers.utils.GsonUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,12 +14,13 @@ import org.springframework.stereotype.Service;
  * */
 @Slf4j
 @Service
-public class GoodbyeKafkaConsumer {
+public class UserKafkaConsumer {
 
   @Autowired
   UserUseCase userUseCase;
 
-  @KafkaListener(topics = "UserMessage", groupId = "example")
+  @KafkaListener(topics = "USER_TOPIC", groupId = "example",
+      containerFactory = "userKafkaListenerContainerFactory")
   public void consume(ConsumerRecord<String, String> record) {
     try {
       log.info(

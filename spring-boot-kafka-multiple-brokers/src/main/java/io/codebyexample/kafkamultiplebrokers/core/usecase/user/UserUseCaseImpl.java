@@ -1,7 +1,8 @@
-package io.codebyexample.kafkamultiplebrokers.core.usecase.example;
+package io.codebyexample.kafkamultiplebrokers.core.usecase.user;
 
-import io.codebyexample.springbootkafka.core.entity.UserMessage;
-import io.codebyexample.springbootkafka.dataprovider.messaging.kafka.KafkaProducer;
+
+import io.codebyexample.kafkamultiplebrokers.core.entity.UserMessage;
+import io.codebyexample.kafkamultiplebrokers.dataprovider.userkafka.UserKafkaProducer;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -14,7 +15,7 @@ import org.springframework.stereotype.Component;
 public class UserUseCaseImpl implements UserUseCase {
 
   @Autowired
-  KafkaProducer kafkaProducer;
+  UserKafkaProducer kafkaProducer;
 
   @Override
   public void greet(UserMessage user) {

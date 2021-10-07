@@ -4,4 +4,12 @@ spring:
   profiles:
     active: local
   application:
-    name: "hello-word"
+    name: "spring-boot-kafka-multiple-brokers"
+user-kafka:
+  bootstrap-servers: "localhost:29092"
+  listener:
+    missing-topics-fatal: false
+bank-kafka:
+  bootstrap-servers: "localhost:39092"
+  listener:
+    missing-topics-fatal: false
