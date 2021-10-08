@@ -1,5 +1,8 @@
-server:
-  port : 8081
-spring:
-  application:
-    name: "hello-word"
+user-kafka:
+  bootstrap-servers: "kafka-1:29092"
+  listener:
+    missing-topics-fatal: false
+bank-kafka:
+  bootstrap-servers: "kafka-2:39092"
+  listener:
+    missing-topics-fatal: false

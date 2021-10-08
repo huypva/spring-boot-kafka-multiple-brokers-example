@@ -15,7 +15,7 @@ import org.springframework.kafka.annotation.EnableKafka;
  * */
 @EnableKafka
 @SpringBootApplication(exclude = KafkaAutoConfiguration.class)
-public class SpringBootKafkaApplication {
+public class KafkaMultipleBrokersApplication {
 
 	@Autowired
 	UserKafkaProperties userKafkaProperties;
@@ -31,7 +31,7 @@ public class SpringBootKafkaApplication {
 	}
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringBootKafkaApplication.class, args);
+		SpringApplication.run(KafkaMultipleBrokersApplication.class, args);
 	}
 
 }

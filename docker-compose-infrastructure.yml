@@ -7,6 +7,8 @@ services:
       ZOOKEEPER_TICK_TIME: 2000
     ports:
       - 22181:2181
+    networks:
+      - kafka-network
 
   zookeeper-2:
     image: confluentinc/cp-zookeeper:latest
@@ -15,6 +17,8 @@ services:
       ZOOKEEPER_TICK_TIME: 2000
     ports:
       - 32181:2181
+    networks:
+      - kafka-network
 
   kafka-1:
     image: confluentinc/cp-kafka:latest
@@ -30,6 +34,8 @@ services:
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    networks:
+      - kafka-network
 
   kafka-2:
     image: confluentinc/cp-kafka:latest
@@ -45,8 +51,10 @@ services:
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    networks:
+      - kafka-network
+
 networks:
-  kafka-user-network:
+  kafka-network:
     driver: bridge
-  kafka-bank-network:
-    driver: bridge
+    name: kafka-network

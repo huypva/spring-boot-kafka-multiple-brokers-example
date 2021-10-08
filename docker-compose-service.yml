@@ -7,3 +7,10 @@ services:
       - spring_profiles_active=docker
     ports:
       - 8081:8081
+    networks:
+      - kafka-network
+
+networks:
+  kafka-network:
+    external: true
+    name: kafka-network
