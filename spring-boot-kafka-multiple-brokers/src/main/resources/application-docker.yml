@@ -1,8 +1,8 @@
 user-kafka:
-  bootstrap-servers: "kafka-1:29092"
+  bootstrap-servers: "${KAFKA_1_HOST}:19092"
   listener:
     missing-topics-fatal: false
 bank-kafka:
-  bootstrap-servers: "kafka-2:39092"
+  bootstrap-servers: "${KAFKA_2_HOST}:29092"
   listener:
     missing-topics-fatal: false

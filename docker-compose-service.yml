@@ -1,16 +1,17 @@
 version: "3.4"
 services:
   spring-boot-kafka-multiple-brokers:
-    build: spring-boot-kafka-multiple-brokers
+    build: ./spring-boot-kafka-multiple-brokers
     container_name: 'spring-boot-kafka-multiple-brokers'
     environment:
       - spring_profiles_active=docker
+      - KAFKA_1_HOST=kafka-1
+      - KAFKA_2_HOST=kafka-2
     ports:
       - 8081:8081
     networks:
       - kafka-network
-
 networks:
   kafka-network:
-    external: true
     name: kafka-network
+    external: true

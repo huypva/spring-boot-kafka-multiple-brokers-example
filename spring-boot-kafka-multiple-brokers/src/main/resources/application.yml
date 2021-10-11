@@ -6,10 +6,10 @@ spring:
   application:
     name: "spring-boot-kafka-multiple-brokers"
 user-kafka:
-  bootstrap-servers: "localhost:29092"
+  bootstrap-servers: "localhost:19093"
   listener:
     missing-topics-fatal: false
 bank-kafka:
-  bootstrap-servers: "localhost:39092"
+  bootstrap-servers: "localhost:29093"
   listener:
     missing-topics-fatal: false
