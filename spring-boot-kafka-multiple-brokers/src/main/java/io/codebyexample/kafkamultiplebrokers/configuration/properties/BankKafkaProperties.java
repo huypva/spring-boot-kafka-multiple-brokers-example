@@ -11,8 +11,6 @@ import org.springframework.context.annotation.Configuration;
  * @author huypva
  */
 @ToString
-@Getter
-@Setter
 @Configuration
 @ConfigurationProperties(prefix = "bank-kafka")
 public class BankKafkaProperties extends KafkaProperties {
